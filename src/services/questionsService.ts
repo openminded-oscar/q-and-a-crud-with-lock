@@ -1,22 +1,10 @@
 import { IQuestion, Question } from "../model/question";
 
-const DEFAULT_QUESTIONS = [{
-  questions: 'What?',
-  answer: ''
-},{
-  questions: 'Who?',
-  answer: ''
-},{
-  questions: 'Where',
-  answer: ''
-}];
 
-// TODO: use any storage to save the questions
 export class QuestionsService {
 
   static async getQuestions() {
-    // todo add sort by date
-    const questions = await Question.find();
+    const questions = await Question.find().sort({ updatedAt: -1 });
     return Promise.resolve(questions);
   }
 
