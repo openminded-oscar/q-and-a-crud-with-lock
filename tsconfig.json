@@ -7,7 +7,7 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
