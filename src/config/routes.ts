@@ -14,8 +14,8 @@ const router = express.Router();
 
 router.get('/questions', [limiter], QuestionsCtrl.list);
 router.get('/questions/:id', [limiter], QuestionsCtrl.getOne);
+router.post('/questions', [limiter], QuestionsCtrl.post);
 router.put('/questions/:id', [limiter], QuestionsCtrl.put);
-router.post('/questions/:id', [limiter], QuestionsCtrl.post);
 router.delete('/questions/:id', [limiter], QuestionsCtrl.delete);
 
 export default router;
