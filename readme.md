@@ -2,9 +2,9 @@
 
 This project rely on:
 NodeJs V18
-MongoDB running on port 27017.
+MongoDB V4.4 running on port 27017.
 
-Run npm run start-local to start locally in live-reload mode.
+Run npm run start to start locally in live-reload mode.
 
 ___
 **CHAPTER 2: Answers to Questions**

@@ -50,6 +50,39 @@ const QuestionsCtrl = {
         });
     },
 
+    acquireUpdate: async (req: Request, res: Response) => {
+        const questionId = req.params.id;
+
+        QuestionsService.acquireUpdateLockQuestion(questionId)
+            .then(question => {
+                if (question) {
+                    res.status(200).send(question);
+                } else {
+                    res.status(404).json({ error: 'Question not found' });
+                }
+            }).catch(e => {
+            console.error('failed to acquire lock on question', e);
+            res.status(500).json({ error: e.message });
+        });
+    },
+
+    releaseUpdate: async (req: Request, res: Response) => {
+        const questionId = req.params.id;
+        const lockId = req.body.lockId;
+
+        await QuestionsService.releaseUpdateLockQuestion(questionId, lockId)
+            .then(question => {
+                if (question) {
+                    res.status(200).send(question);
+                } else {
+                    res.status(404).json({ error: 'Question not found' });
+                }
+            }).catch(e => {
+                console.error('failed to release question lock', e);
+                res.status(500).json({ error: e.message });
+            });
+    },
+
     delete: async (req: Request, res: Response) => {
         QuestionsService.deleteQuestion(req.params.id)
             .then(question => {

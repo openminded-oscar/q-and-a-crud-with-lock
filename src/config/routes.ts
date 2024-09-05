@@ -15,6 +15,8 @@ const router = express.Router();
 router.get('/questions', [], QuestionsCtrl.list);
 router.get('/questions/:id', [], QuestionsCtrl.getOne);
 router.post('/questions', [limiter], QuestionsCtrl.post);
+router.post('/questions/:id/acquire', [], QuestionsCtrl.acquireUpdate);
+router.post('/questions/:id/release', [], QuestionsCtrl.releaseUpdate);
 router.put('/questions/:id', [limiter], QuestionsCtrl.put);
 router.delete('/questions/:id', [limiter], QuestionsCtrl.delete);
 
