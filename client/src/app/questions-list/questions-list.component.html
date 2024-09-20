@@ -1,0 +1,30 @@
+<div class="row mb-5">
+  <div class="col-12">
+    <ul class="list-group" ngbAccordion>
+
+      <li *ngFor="let question of questions; let i = index"
+          ngbAccordionItem
+          [collapsed]="true"
+          class="list-group-item" [ngClass]="{'active-question': question._id === activeQuestion?._id}">
+        <div class="question-item" ngbAccordionHeader>
+          <div class="question-item--content">
+            <button ngbAccordionButton>
+              {{ question.title }}
+            </button>
+          </div>
+          <div class="question-item--actions">
+            <button class="btn btn-primary" (click)="selectToModify(question)">Modify</button>
+            <button class="btn btn-danger" (click)="remove(question)">Delete</button>
+          </div>
+        </div>
+
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody>
+            <div>{{ question.answer }}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>

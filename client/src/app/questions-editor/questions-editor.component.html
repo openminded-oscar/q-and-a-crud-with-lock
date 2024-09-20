@@ -1,0 +1,38 @@
+<div class="countdown">
+  <app-countdown *ngIf="question"
+                 [title]="'Time left for edit:'"
+                 [initialTime]="EDIT_MAX_DURATION"
+                 (timePassed)="timePassed()">
+  </app-countdown>
+</div>
+<form [formGroup]="questionForm">
+  <div class="mb-3">
+    <label for="exampleInputQ" class="form-label">Question</label>
+    <input formControlName="title"
+           type="text" class="form-control" id="exampleInputQ" aria-describedby="qHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputA" class="form-label">Answer</label>
+    <textarea formControlName="answer"
+              class="form-control" id="exampleInputA" aria-describedby="aHelp"
+              rows="3">
+    </textarea>
+  </div>
+</form>
+
+<div class="editor-action-buttons">
+  <button class="btn btn-primary" (click)="saveQuestion()"
+          [disabled]="!(questionForm?.valid) || !questionForm.dirty">
+    <ng-container *ngIf="isNew; else updateText">
+      Save
+    </ng-container>
+    <ng-template #updateText>
+      Save Changes
+    </ng-template>
+  </button>
+
+  <button class="btn btn-primary" (click)="cancelChanges()"
+  [disabled]="!question && isFormEmpty">
+    Cancel
+  </button>
+</div>

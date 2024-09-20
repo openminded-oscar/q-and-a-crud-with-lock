@@ -1,0 +1,38 @@
+{
+  "name": "qna",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --configuration=local",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "17.0.1",
+    "@angular/animations": "18.0.7",
+    "@angular/common": "18.0.7",
+    "@angular/compiler": "18.0.7",
+    "@angular/core": "18.0.7",
+    "@angular/forms": "18.0.7",
+    "@angular/platform-browser": "18.0.7",
+    "@angular/localize": "18.0.7",
+    "@angular/platform-browser-dynamic": "18.0.7",
+    "@angular/router": "18.0.7",
+    "bootstrap": "^5.3.3",
+    "rxjs": "7.8.1",
+    "tslib": "^2.7.0",
+    "zone.js": "0.14.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "18.0.7",
+    "@angular/cli": "18.0.7",
+    "@angular/compiler-cli": "18.0.7",
+    "codelyzer": "^6.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "5.4"
+  }
+}

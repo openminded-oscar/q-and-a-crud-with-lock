@@ -1,0 +1,17 @@
+.question-item {
+  display: flex;
+
+  &--content {
+    flex: 1
+  }
+
+  &--actions {
+    display: flex;
+    margin-left: 15px;
+    gap: 15px
+  }
+}
+
+.active-question {
+  border: blue 1px solid
+}
